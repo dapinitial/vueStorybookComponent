@@ -34,7 +34,7 @@ export default class Button extends Vue {
 .button__default {
 	background: black;
 	color: white;
-	cursor: pointer;
+	cursor: pointer !important;
 	border-radius: 50px;
 	line-height: 35px;
 	border: unset;
