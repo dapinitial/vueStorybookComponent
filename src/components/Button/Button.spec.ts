@@ -17,7 +17,7 @@ describe('Button.vue', () => {
 		expect(actual).toBeTruthy();
 	});
 
-	it('dont fires click event when disabled', () => {
+	it('prevent click event when disabled', () => {
 		wrapper.setProps({
 			disabled: true
 		});
