@@ -1,0 +1,99 @@
+/** OOCSS-style helpers for layout works well, esp with ie6+, perfect for
+  * hospitals, government, legacy, abroad and for quickly evaluating 
+  * in the the developer tools while inspecting the element.
+  */
+
+/**
+  * Utility helper classes.
+  */
+
+// Old-school `clearfix` for ALL browsers, seriously.
+.line:after,
+.lastUnit:after {
+  clear: both;
+  content: "x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x  ";
+  display: block;
+  font-size: xx-large;
+  height: 0 !important;
+  line-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+.line {
+  *zoom: 1;
+}
+.lastUnit {
+  @include lastUnit;
+}
+.unit {
+  @include unit;
+}
+.unit1of2 {
+  @include unit;
+  width: 50%;
+}
+.unit1of3 {
+  @include unit;
+  width: 33.3%;
+}
+.unit2of3 {
+  @include unit;
+  width: 66.66%;
+}
+.unit1of4 {
+  @include unit;
+  width: 25%;
+}
+.unit1of5 {
+  @include unit;
+  width: 20%;
+}
+.unit1of6 {
+  @include unit;
+  width: 16.67%;
+}
+.unit3of4 {
+  @include unit;
+  width: 75%;
+}
+.unitRight {
+  @include unitRight;
+}
+.left-column {
+  @include unit;
+}
+.right-column {
+  @include lastUnit;
+}
+.floatRight {
+  @include unitRight;
+}
+.centerVertical {
+  @include centerVertical;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.flex-left {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 0;
+  overflow: hidden;
+}
+.flex-right {
+  align-items: flex-end;
+  margin-left: auto;
+}

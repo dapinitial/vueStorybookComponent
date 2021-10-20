@@ -1,0 +1,165 @@
+.commonui-button {
+  align-items: center;
+  background: rgba(255, 255, 255, .35);
+  border: 1rem solid transparent;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1984);
+  color: #444;
+  cursor: pointer;
+  display: flex;
+  flex-grow: 1;
+  font-family: "Rubik";
+  font-size: 12px;  
+  font-weight: 400;
+  height: 48rem;
+  justify-content: center;
+  letter-spacing: .89px;
+  margin-right: 1rem;
+  max-height: 48rem;
+  min-width: 48rem;
+  outline: 0;
+  padding: 0 10rem;
+  text-align: center;
+  &:hover {
+    background: rgba(255, 255, 255, .59);
+  }
+  &.dark {
+    color: #fff;
+    background: #222;
+    border: 1rem solid #333;
+    &:hover {
+      background-image: linear-gradient(to bottom, #2d2f32, #1a1a1a);
+    }
+  }
+  &.green {
+    background: linear-gradient(89deg, #00ff6f, #00b750, #4cfd99, #6cfd4c, #25ce00);
+    background-size: 1000% 1000%;
+
+    animation: goGreen 4s ease infinite;
+
+    &:hover {
+      background: #10b710;
+      color: #fff;
+    }
+  }
+  &.gris {
+    background-image: linear-gradient(to bottom, #686868, #616161, #5b5b5b, #545454, #4e4e4e);
+    color: #fff;
+    &:hover {
+      background: #888;
+    }
+  }
+  &.ghost {
+    background: none;
+    box-shadow: none;
+    padding: 4rem 6rem;
+    color: #1a1a1a;
+    &:hover {
+      background: none;
+    }
+  }
+  &[disabled],
+  &.disabled {
+    background: #ccc;
+    border: 0;
+    box-shadow: none;
+    color: #888;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// to be re/moved in the new layout realm to an InnerNavBarCommponent.scss 
+// when we move the InnerNavBar to the rightside.
+.filter-button {
+  margin-top: 10px;
+}
+
+@keyframes goGreen { 
+  0%{background-position:0% 50%}
+  50%{background-position:100% 51%}
+  100%{background-position:0% 50%}
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.dashboard-header--heading {
+  color: #9e9e9e;
+  font-size: 18rem;
+  line-height: 60rem;
+  text-indent: 8rem;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.progress-button {
+  box-shadow: 0 3rem 10rem 1rem rgba(0, 0, 0, .25);
+  border: 0;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  background-color: #000;
+  background-image: linear-gradient(top, #333, #000);
+  color: #fff !important;
+  cursor: pointer;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  font-family: 'Rubik', sans-serif;
+  font-size: 15rem;
+  font-weight: 300;
+  line-height: 1;
+  min-height: 32rem;
+  margin-bottom: 12rem;
+  padding: 14rem 20rem;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none !important;
+  text-indent: 0;
+  transition: .187s linear all;
+
+  &:hover {
+    background: #4e4e4e;
+    text-indent: 14rem;
+    transition: .187s linear all;
+  }
+}
+
+.progress-button.in-progress::after,
+.progress-button.finished::after {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  padding-top: inherit;
+  color: #fff !important;
+  left: 0;
+}
+
+.progress-button .progress-bar {
+  bottom: 0;
+  background-color: #00A2FF;
+  height: 3rem;
+  left: 0;
+  position: absolute;
+  transition: width 0.5s, height 0.5s;
+  width: 0;
+  z-index: 1;
+}
+
+.progress-button .progress-bar.background-horizontal {
+  height: 100%;
+}
+
+.progress-button .progress-bar.background-vertical {
+  height: 0;
+  top: 0;
+  width: 100%;
+}

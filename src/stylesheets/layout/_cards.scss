@@ -1,0 +1,105 @@
+/** needs a major refactor, additional flex-box mixins and widths, etc. */
+.card {
+  height: auto;
+  min-height: auto;
+  perspective: 2000px;
+  position: relative;
+}
+
+.card-contents {
+  background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+}
+
+.front,
+.back {
+  @include card;
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform .4s ease-in-out;
+}
+
+.front {
+  &:before {
+    position: absolute;
+    display: block;
+    content: ' ';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .25;
+    z-index: -1;
+  }
+  .card.flipped & {
+    transform: rotateX(180deg);
+  }
+  .card:nth-child(even).flipped & {
+    transform: rotateX(-180deg);
+  }
+}
+
+.back {
+  background: #fff;
+  transform: rotateX(-180deg);
+  
+  .card.flipped & {
+    transform: rotateX(0deg);
+  }
+  
+  .card:nth-child(even) & {
+    transform: rotateX(180deg);
+  }
+  
+  .card:nth-child(even).flipped & {
+    transform: rotateX(0deg);
+  }
+}
+
+.widget {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card-contents {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.card-header {
+  @include line;
+  position: relative;
+}
+
+.inset-title {
+  color: #969696;
+  font-size: 11rem;
+  letter-spacing: .25rem;
+  font-weight: 400;
+  margin-bottom: 4rem;
+  margin-right: 8rem;
+  text-align: left;
+  text-shadow: 1rem 1rem 0 #fff;
+}
+
+.card-value {
+  color: #545456;
+  font-size: 14rem;
+  font-weight: 400;
+  margin-bottom: 4rem;
+  margin-right: 8rem;
+  text-align: left;
+}
+
+.card-body {
+  display: flex;
+}
+
+.card-footer {
+  
+}

@@ -1,0 +1,13 @@
+@mixin centerVertical($extend: true) {
+  @if $extend {
+    @extend %centerVertical;
+  } @else {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+%centerVertical {
+  @include centerVertical($extend: false);
+}

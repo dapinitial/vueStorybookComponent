@@ -1,0 +1,85 @@
+/**
+  * AG Grid overrides
+  */
+.ag-theme-balham-dark {
+  background-color: #626262;
+  color: #f5f5f5;
+  font: 400 14rem "Rubik", -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+}
+
+.ag-theme-balham-dark .ag-header {
+  font: 400 12rem "Rubik", -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+}
+
+.ag-theme-balham-dark .ag-root {
+  border: 0; 
+}
+
+.ag-theme-balham-dark .ag-cell {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.ag-theme-balham-dark .ag-row {
+  cursor: pointer;
+  background: #565656;
+  border: 0;
+  transition: background .2s linear;
+  &:hover {
+    background: #333;
+    transition: background .2s linear;
+  }
+}
+
+.ag-theme-balham-dark .ag-row-even {
+  background: #4d4d4d;
+  border: 0;
+}
+
+.ag-theme-balham-dark .ag-row-selected {
+  // background-color: #005880 !important;
+  // border-bottom-color: #005880 !important;
+  background-color: #eee !important;
+  border-bottom-color: #ccc !important;
+  color: #1a1a1a !important;
+}
+
+//.ag-body-container.ag-layout-normal {
+//  width: auto !important;
+//}
+
+.ag-theme-balham-dark .ag-header-cell-label .ag-header-cell-text {
+  letter-spacing: .84rem;
+}
+
+.ag-theme-balham-dark .ag-menu {
+  background-color: rgba(255, 255, 255, .54);
+  border-radius: 0;
+  box-shadow: 0rem 2rem 4rem rgba(0, 0, 0, .4);
+  color: #000;
+  min-width: 240rem;
+  overflow: hidden;
+}
+
+.ag-theme-balham-dark .ag-filter input[type=text] {
+  border: 0;
+  font-size: 14rem;
+  line-height: 32rem;
+  outline: 0;
+}
+
+.ag-theme-balham-dark .ag-filter-select {
+  border: 0;
+  font-size: 14rem;
+  height: 32rem;
+  outline: 0;
+}
+
+#applyButton {
+  padding: 10rem 14rem;  
+  &:hover {
+    cursor: pointer;
+    background: #fff;
+  }
+}

@@ -1,0 +1,123 @@
+/**
+  * Use a `unit` inside of `line` and you can either set a width or not set a width.
+  * ie: <div class="line">
+  *       <div class="unit"></div>
+  *       <div class="unit size1of5"></div>
+  *       <div class="unit size1of3</div>
+  *       <div class="lastUnit"></div>
+  *     </div>
+  */
+@mixin unit($extend: true) {
+  @if $extend {
+    @extend %unit;
+  }
+  @else {
+    display: inline-block;
+    float: left;
+  }
+}
+
+%unit {
+  @include unit($extend: false);
+}
+
+/** Unit(s) can be described below
+  *
+  */
+
+// Unit: the entire size of the container element
+@mixin unit1of1($extend: false) {
+  @if $extend {
+    @extend %unit1of1;
+  }
+  @else {
+    display: inline-block;
+    float: left;
+    width: 100%;
+  }
+}
+
+%unit1of1 {
+  @include unit1of1($extend: false);
+}
+
+// Unit: half the size of the container element
+@mixin unit1of2($extend: false) {
+  @if $extend {
+    @extend %unit1of2;
+  }
+  @else {
+    display: inline-block;
+    float: left;
+    width: 50%;
+  }
+}
+
+%unit1of2 {
+  @include unit1of2($extend: false);
+}
+  
+// Unit: a third the size of the container element
+@mixin unit1of3($extend: false) {
+  @if $extend {
+    @extend %unit1of3;
+  }
+  @else {
+    display: inline-block;
+    float: left;
+    width: 33.3333%;
+  }
+}
+
+%unit1of3 {
+  @include unit1of3($extend: false);
+}
+
+// Unit: two thirds the size of the container element
+@mixin unit2of3($extend: false) {
+  @if $extend {
+    @extend %unit2of3;
+  }
+  @else {
+    display: inline-block;
+    float: left;
+    width: 66.6666%;
+  }
+}
+
+%unit2of3 {
+  @include unit2of3($extend: false);
+}
+  
+// Unit: a quarter the size of the container element
+@mixin unit1of4($extend: false) {
+  @if $extend {
+    @extend %unit1of4;
+  }
+  @else {
+    display: inline-block;
+    float: left;
+    width: 25%;
+  }
+}
+
+%unit1of4 {
+  @include unit1of4($extend: false);
+}
+
+// Unit: a fifth the size of the container element
+@mixin unit1of5($extend: false) {
+  @if $extend {
+    @extend %unit1of5;
+  }
+  @else {
+    display: inline-block;
+    float: left;
+    width: 20%;
+  }
+}
+
+%unit1of5 {
+  @include unit1of5($extend: false);
+}
+  

@@ -1,0 +1,105 @@
+#GlobalAppWrapper {
+  bottom: 0;
+  left: 0; 
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0; 
+  transform: translateX(0rem);
+  will-change: transform;
+  -webkit-transform: translate3d(0,0,0);
+  z-index: 1;
+  &.modal-onScreen {
+    pointer-events: none;
+  }
+}
+
+#GlobalHeader {
+  @include line;
+  @include mobile {}
+  @include tablet {}
+  @include portrait {}
+  @include sm-desktop {}  
+  background: #1b1b1b;
+  color: #ccc;
+  display: flex;
+  height: 20rem;
+  padding: 10rem;
+}
+
+.NordstromLogo {
+  @include unit;
+  margin-top: 10rem;
+}
+
+#App {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  perspective: 1000px;
+  position: fixed;
+  top: 40px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  will-change: transform;
+}
+
+#AppControlBar,
+#Page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#AppControlBar {
+  background-color: #232323;
+  border-left: 1rem solid rgba(255, 255, 255, .015);
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 60rem;
+  height: 100vh;
+  perspective: 1000rem;
+  transform: translateX(0);
+  z-index: 10;
+}
+
+#AppControlMenu {
+  @include line;
+  background: #1b1b1b;
+  color: #fefefe;
+  height: 100vh;
+  position: absolute;
+  right: -320rem;
+  width: 320rem;
+  -webkit-transform:translate3d(0,0,0);
+  will-change: transform;
+}
+
+#AppControlMenu .content {
+  @include line;
+  height: calc(100vh - 60rem);
+  overflow: hidden;
+  padding: 14rem 10rem 10rem 10rem;
+} 
+
+#Page {
+  background: radial-gradient(#43474a,#1c1c1d);
+  height: calc(100% - 40rem) !important; // subtract offset of #App top
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+  transform: translateX(0rem);
+  -webkit-transform:translate3d(0,0,0);
+  width: calc(100% - 60rem);
+  will-change: transform;
+}
+
+.container {
+  padding: 14rem;
+}

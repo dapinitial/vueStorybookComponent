@@ -1,0 +1,30 @@
+/**
+  * Apply this to the `last unit` when laying out units inside a `line`.
+  * ie: <div class="line">
+  *       <div class="unit"></div>
+  *       <div class="unit size1of5"></div>
+  *       <div class="unit size1of3</div>
+  *       <div class="lastUnit"></div>
+  *     </div>
+  */
+@mixin lastUnit($extend: true) {
+  @if $extend {
+    @extend %lastUnit;
+  }
+  @else {
+    float: none;
+    display: block;
+    display: table-cell;
+    vertical-align: top;
+    width: 9999em;
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+%lastUnit {
+  @include lastUnit($extend: false);
+}

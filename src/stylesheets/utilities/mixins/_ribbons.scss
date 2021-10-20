@@ -1,0 +1,122 @@
+$brand-primary:         #428bca;
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
+// Ribbon Variants
+@mixin ribbon ($color, $bgcolor1, $bgcolor2, $position: top-right) {
+  > .ribbon-text {
+    color: $color;
+    background-image: linear-gradient(top, $bgcolor1 0%, $bgcolor2 100%);
+    background-color: $bgcolor1;
+    display: block;
+    font-size: 13rem;
+    font-weight: 400;
+    line-height: 10rem;
+    position: absolute;
+    padding: 8rem 16rem;
+    text-align: center;
+    text-shadow: 0 1rem 0 darken($bgcolor1, 15%);
+    text-transform: capitalize;
+    width: 100%;
+ 
+    &:before,
+    &:after {
+      position: absolute;
+      content: " ";
+    }
+
+    &:before { left: 0; }
+    &:after  { right: 0; }
+    
+  @if ($position == top-left) {
+    transform: rotate(-45deg);
+    box-shadow: 0 3rem 6rem -3rem rgba(#000, .5);
+    top: 22rem;
+    left: -24rem;  
+    
+    &:before, 
+    &:after { 
+      bottom: -3rem; 
+      border-top: 3rem solid darken($bgcolor1, 40%);
+      border-left: 3rem solid transparent;
+      border-right: 3rem solid transparent;
+    }
+  }
+}
+}
+
+.ribbon {
+  position: absolute;
+  z-index: 100;
+  width: 120rem;
+  height: 120rem;
+  overflow: hidden;
+  font-family: 'Rubik';
+
+  &::before {
+    content: " ";
+    background: #3c3c3c;
+    box-shadow: inset 13rem 0rem 18rem -10rem rgba(0,0,0,.18);
+    display: block;
+    height: 84rem;
+    width: 12rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  &.top-right {
+    top: -3rem;
+    right: -6rem;
+    
+    &.ribbon-default {
+      @include ribbon(#000, #f4f4f4, #ddd);
+    }
+  }
+  
+  &.top-left {
+    top: -3rem;
+    left: -15rem;
+    
+    &.ribbon-default {
+      @include ribbon(#f5f7f7, #2096a2, #ddd, top-left);
+    }  
+  }
+  
+  &.bottom-right {
+    bottom: -3rem;
+    right: -6rem;
+    
+    &.ribbon-default {
+      @include ribbon(#000, #f4f4f4, #ddd, bottom-right);
+    }
+  }  
+
+  &.bottom-left {
+    bottom: -3rem;
+    left: -6rem;
+    
+    &.ribbon-default {
+      @include ribbon(#000, #f4f4f4, #ddd, bottom-left);
+    }
+    
+    &.ribbon-primary {
+      @include ribbon(#fff, $brand-primary, darken($brand-primary, 15%), bottom-left);
+    }
+  }
+
+  &.cpr {
+    & > .ribbon-text {
+      background: #ff6c00 !important;
+    }
+  }
+  &.promo {
+    
+  }
+  .clearance {
+
+  }
+}

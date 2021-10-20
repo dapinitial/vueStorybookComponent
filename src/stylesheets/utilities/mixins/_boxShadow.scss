@@ -1,0 +1,17 @@
+/**
+  * Let's promote things like this to maintain harmony across the site.
+  * If meaningful alternatives to this exist then we'll create a mixing
+  * that descibes that value and so: @include boxShadow($large) or something.
+  */
+@mixin box-shadow($extend: true) {
+  @if $extend {
+    @extend %box-shadow;
+  }
+  @else {
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.05);
+  }
+}
+
+%box-shadow {
+  @include box-shadow($extend: false);
+}

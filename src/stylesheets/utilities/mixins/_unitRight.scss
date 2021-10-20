@@ -1,0 +1,13 @@
+// Basic float-right type class
+@mixin unitRight($extend: true) {
+  @if $extend {
+    @extend %unitRight;
+  }
+  @else {
+    float: right !important;
+  }
+}
+
+%unitRight {
+  @include unitRight($extend: false);
+}

@@ -1,0 +1,83 @@
+.options.dropdown {
+	height: auto;
+	width: 100%;
+	padding: 6px 25px 5px 10px;
+	border: 1px solid #e0e0e0;
+  border-radius: 3px;
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+  text-align: left;
+}
+
+.options.dropdown .sub-menu {
+  display: none;
+  width: 100%;
+  padding: 6px 0;
+  list-style: none;
+  margin: 0;
+  background-color: #fff;
+  border-right: 1px solid #c7c7c7;
+  border-bottom: 1px solid #c7c7c7;
+  border-left: 1px solid #c7c7c7;
+  position: absolute;
+  z-index: 200;
+  left: 0;
+  top: 32px;
+}
+
+.options.dropdown .sub-menu li {
+  color: #656565;
+  padding: 16px;
+  position: relative;
+  z-index: 50;
+}
+
+.options.dropdown .sub-menu li:hover {
+  background-color: #eee;
+}
+
+.options.dropdown .sub-menu li a,
+a.nav_link,
+.external_links_sub a {
+  color: #333;
+  text-decoration: none;
+}
+
+.options.dropdown .sub-menu li a:hover,
+a.nav_link:hover,
+.external_links_sub a:hover {
+  text-decoration: underline;
+}
+
+.options.dropdown .title::before {
+  content: " ";
+  position: absolute;
+  z-index: 5;
+  background: #ccc;
+  height: auto;
+  width: 35px;
+  top: 0;
+  right: 0;
+  border-left: 1px solid #bbb;
+}
+
+.options.dropdown .title::after {
+  content: "▾";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  padding-top: 5px;
+  padding-right: 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+.options.dropdown .sub-menu li button {
+  border: none;
+  background: none;
+  padding: 0;
+  position: realtive;
+  z-index: 100;
+}

@@ -1,0 +1,50 @@
+@mixin baseFont($extend: true) {
+  @if $extend {
+    @extend %baseFont;
+  }
+  @else {
+    font-family: "Rubik", sans-serif;
+    font-size: 15rem;
+    font-weight: 100;
+    letter-spacing: -.5rem;
+    line-height: 20rem;
+  }
+}
+
+%baseFont {
+  @include baseFont($extend: false);
+}
+
+.italics {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.underline {
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 8rem;
+}
+
+.emphasis {
+  font-style: bold;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.h4 {
+  @include line;
+  @include fontSmoothing;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 0 10px 0 5px;
+}
+
+em {
+  font-style: italic;
+  font-weight: 700;
+}

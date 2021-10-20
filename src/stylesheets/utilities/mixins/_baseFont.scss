@@ -1,0 +1,17 @@
+@mixin baseFont($extend: true) {
+  @if $extend {
+    @extend %baseFont;
+  }
+  @else {
+    @include fontSmoothing;
+    font-family: "Rubik", sans-serif;
+    font-size: 8rem;
+    font-weight: 400;
+    letter-spacing: .26;
+    line-height: 14rem;
+  }
+}
+
+%baseFont {
+  @include baseFont($extend: false);
+}

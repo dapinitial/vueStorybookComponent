@@ -1,0 +1,14 @@
+@mixin fontSmoothing($extend: true) {
+  @if $extend {
+    @extend %fontSmoothing;
+  }
+  @else {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+%fontSmoothing {
+  @include fontSmoothing($extend: false);
+}

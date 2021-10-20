@@ -1,0 +1,26 @@
+/**
+  * Clearfix (micro)
+  * Use a `unit` inside of `line` and you can either set a width or not set a width.
+  * ie: <div class="line">
+  *       <div class="unit"></div>
+  *       <div class="unit size1of5"></div>
+  *       <div class="unit size1of3</div>
+  *       <div class="lastUnit"></div>
+  *     </div>
+  */
+@mixin line($extend: true) {
+  @if $extend {
+    @extend %line;
+  }
+  @else {
+    &:after {
+      content: ' ';
+      clear: both;
+      display: table;
+    }
+  }
+}
+
+%line {
+  @include line($extend: false);
+}

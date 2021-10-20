@@ -1,0 +1,16 @@
+@mixin icon($extend: true) {
+  @if $extend {
+    @extend %icon;
+  }
+  @else {
+    @include fontSmoothing;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font: normal normal normal 30px/1 'Material-Design-Iconic-Font';
+  }
+}
+
+%icon {
+  @include icon($extend: false);
+}

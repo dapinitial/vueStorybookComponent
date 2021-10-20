@@ -1,0 +1,26 @@
+/**
+  * defeat weird scroll bars that show up, but maintain their function
+  */ 
+@mixin scrolling($extend: true) {
+  @if $extend {
+    @extend %scrolling;
+  }
+  @else {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-base-color: #333;
+    scrollbar-3dlight-color: #3e3e3e;
+    scrollbar-highlight-color: #4e4e4e;
+    scrollbar-track-color: #444;
+    scrollbar-arrow-color: #101010;
+    scrollbar-shadow-color: #222;
+    scrollbar-dark-shadow-color: #111;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+%scrolling {
+  @include scrolling($extend: false);
+}

@@ -1,0 +1,65 @@
+$sm-mobile: 0px;
+$mobile-width: 320px;
+$sm-tablet: 645px;
+$tablet-width: 768px;
+$portrait-width: 769px;
+$sm-desktop-width: 1455px;
+$xl-desktop-width: 1456px;
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .card-contents {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: #{$sm-mobile}) and (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin sm-tablet {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$sm-tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$sm-tablet}) and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media (min-width: #{$portrait-width}) and (max-width: #{$sm-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin sm-desktop {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$sm-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin xl-desktop {
+  @media (min-width: #{$xl-desktop-width}) {
+    @content;
+  }
+}
+
+/**
+  * End Responsive
+*/

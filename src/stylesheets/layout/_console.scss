@@ -1,0 +1,41 @@
+.console {
+  //display: none;
+  @include fontSmoothing;
+  @include unitRight;
+  background: rgba(0, 0, 255, .5);
+  border: 1px solid rgba(0,0,0,.24);
+  color: rgba(50, 25, 120,  1.00);
+  color: pink;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+  font-size: 13rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 8rem;
+  position: fixed;
+  right: 20rem;
+  bottom: 80rem;
+  z-index: 1000;
+  @include portrait {
+    bottom: 20rem;
+  }
+  @include sm-desktop {
+    bottom: 20rem;
+  }
+  &::before {
+    @include mobile {
+      content: 'mobile';
+    }
+    @include sm-tablet {
+      content: 'sm-tablet';
+    }
+    @include tablet {
+      content: 'tablet';
+    }
+    @include portrait {
+      content: 'portrait';
+    }
+    @include sm-desktop {
+      content: 'sm-desktop';
+    }
+  }
+}

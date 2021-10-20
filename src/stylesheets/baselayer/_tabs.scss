@@ -1,0 +1,53 @@
+/**
+  * tabs 
+  **/
+.tabs {
+  @include line;
+  background: #22252f;
+  height: 100%;
+  margin-top: 10px;
+  position: relative;
+
+  .tab {
+    @include unit;
+    
+    input[type="radio"] {
+      display: none;
+    }
+    
+    .content {
+      position: absolute;
+      background-color: rgb(48, 53, 68);
+      height: calc(100% - 40px);
+      left: 0px;
+      width: 100%;
+      padding: 14px 10px 10px 10px;
+    } 
+
+    label {
+      cursor: pointer;
+      display: block;
+      font-weight: 700;
+      padding: 10px 14px;
+      text-transform: uppercase;
+    }
+
+    .radiotab {
+      display: none; 
+      &:checked {
+        ~ label {
+          background: #303544;
+          color: #94F8C5;
+        } 
+        ~ .content {
+          z-index: 1;
+          h4 {
+            @include line;
+            font-size: 12px;
+            margin-bottom: 14px;
+          }
+        } 
+      } 
+    }
+  }
+}
