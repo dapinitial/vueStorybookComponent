@@ -1,11 +1,12 @@
 <template>
-  <button 
-  	:aria-pressed="disabled" 
-	aria-describedby="Default Button Example" 
-	aria-label="This is a button" 
-	:disabled="disabled" 
-	:class="classes" 
-	@click="onClick">Default Button Example</button>
+	<button
+		:aria-pressed="disabled"
+		aria-describedby="Default Button Example"
+		aria-label="This is a button"
+		:disabled="disabled"
+		:class="classes"
+		@click="onClick"
+	>Default Button Example</button>
 </template>
 
 <script lang="ts">
@@ -14,6 +15,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class Button extends Vue {
 	@Prop({ type: Boolean, default: false }) disabled!: boolean;
+
 
 	get classes(): object {
 		return {
@@ -41,7 +43,7 @@ export default class Button extends Vue {
 	padding: 0 20px;
 
 	&:hover {
-		background: #2e2e2e; 
+		background: #2e2e2e;
 	}
 
 	&--disabled {
