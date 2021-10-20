@@ -1,5 +1,7 @@
 <template>
 	<button
+		type="button"
+		title="Default Button Example"
 		:aria-pressed="disabled"
 		aria-describedby="Default Button Example"
 		aria-label="This is a button"
